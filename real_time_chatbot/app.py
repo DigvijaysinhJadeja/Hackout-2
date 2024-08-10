@@ -11,7 +11,7 @@ def index():
 @socketio.on('message')
 def handle_message(data):
     user_input = data['message']
-    language = data.get('language', 'en')  # Default to English if no language is selected
+    language = data.get('language', 'en')  # Default to English if no language is selected.
     response, options = generate_response(user_input, language)
     emit('response', {'response': response, 'options': options})
 
